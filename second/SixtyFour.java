@@ -20,6 +20,7 @@ public class SixtyFour {
     //重复上述步骤直至遍历到数组末尾。
     public static ArrayList<Integer> maxInWindows(int [] num, int size) {
         ArrayList<Integer> result = new ArrayList<>();
+        //该辅助数组存放的是索引，牢记！
         ArrayList<Integer> assistList = new ArrayList<>();
         if (size <= 0 || num.length < size){
             return result;
@@ -32,7 +33,7 @@ public class SixtyFour {
                 assistList.remove(0);
             }
             //再循环剔除新值插入后其前面较小的值
-            while (!assistList.isEmpty() && num[i] > num[assistList.get(assistList.size()-1)]){
+            while (!assistList.isEmpty() && num[i] >= num[assistList.get(assistList.size()-1)]){
                 assistList.remove(assistList.size()-1);
             }
             assistList.add(i);

@@ -13,7 +13,7 @@ public class Sixteen {
     }
 
     //思路：
-    //看成归并排序的merge过程
+    //构造一个空链表头，看成归并排序的merge过程
     public ListNode Merge(ListNode list1,ListNode list2) {
         ListNode head = new ListNode(0);
         ListNode temp = head;

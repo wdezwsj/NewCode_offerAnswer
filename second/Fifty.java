@@ -11,7 +11,6 @@ public class Fifty {
     //这样我们就相当于把把这个元素给放置到了正确的位置，然后我们继续判断换过来的元素是否和当前下标对应，
     //若不对应，则继续重复上述步骤，直至换回来的元素正好对应当前下标。
     //若换的过程中发现当前下标对应的元素其应该在的位置上的元素和自己相等，那么这就是我们发现的第一个重复数字。
-    //
     public boolean duplicate(int numbers[],int length,int [] duplication) {
         if (length == 0){
             return false;

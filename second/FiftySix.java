@@ -27,19 +27,22 @@ public class FiftySix {
         virtualNode.next = pHead;
 
         //两个变量，一个记录上一节点，一个记录比较节点
-        ListNode currentNode = virtualNode;
-        ListNode nextNode = pHead;
+        ListNode preNode = virtualNode;
+        ListNode currentNode = pHead;
 
-        while (nextNode != null && nextNode.next != null){
-            if (nextNode.val == nextNode.next.val){
-                while (nextNode.next != null && nextNode.val == nextNode.next.val){
-                    nextNode = nextNode.next;
+        while (currentNode != null && currentNode.next != null){
+            if (currentNode.val == currentNode.next.val){
+                while (currentNode.next != null && currentNode.val == currentNode.next.val){
+                    currentNode = currentNode.next;
                 }
-                currentNode.next = nextNode.next;
+                //改变pre节点的next指针
+                preNode.next = currentNode.next;
             }else {
-                currentNode = currentNode.next;
+                //pre指针右移
+                preNode = preNode.next;
             }
-            nextNode = nextNode.next;
+            //cur指针右移
+            currentNode = currentNode.next;
         }
         return virtualNode.next;
     }

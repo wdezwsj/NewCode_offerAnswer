@@ -11,7 +11,7 @@ public class Six {
         }
         int temp = array[0];
         for (int i = 1; i < array.length; i++){
-            if (temp < array[i]){
+            if (temp > array[i]){
                 return array[i];
             }
         }

@@ -1,7 +1,5 @@
 package com.company.second;
 
-import com.sun.org.apache.regexp.internal.RE;
-
 //正则表达式匹配
 public class FiftyTwo {
 

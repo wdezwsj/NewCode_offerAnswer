@@ -8,7 +8,7 @@ import java.util.Set;
 public class ThirtyFour {
 
     //思路：
-    //通过一次遍历，将字符串中所有字符出现的次数保存在hashmap中，然后查找hashmap中第一个value为1的key在字符串中的位置。
+    //通过一次遍历，将字符串中所有字符出现的次数保存在LinkedHashMap中，然后查找LinkedHashMap中第一个value为1的key在字符串中的位置。
     public int FirstNotRepeatingChar(String str) {
         if (str == null || "".equals(str)){
             return -1;

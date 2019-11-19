@@ -10,17 +10,18 @@ public class ThirtySeven {
     //②用二分查找来定位k-0.5和k+0.5的位置，二者相减即为答案
 
     //这里只展示方法二的答案
-    public int GetNumberOfK(int [] array , int k) {
+    public static int GetNumberOfK(int [] array , int k) {
         if (array == null || array.length == 0){
             return -1;
         }
         int start = 0, end = array.length-1;
         int a = find(array,k-0.5);
         int b = find(array,k+0.5);
+        //如果数组中没有这个数，那么a和b相等，所以可以满足输出0
         return b - a;
     }
 
-    private int find(int[] array, double k) {
+    private static int find(int[] array, double k) {
         int start = 0, end = array.length - 1;
         while (start <= end){
             int mid = (start + end) / 2;
@@ -33,6 +34,10 @@ public class ThirtySeven {
         //此处start代表大于k的数的首位置
         //即传入k-0.5，返回的是k的首位置；传入k+0.5，返回的是k+1的首位置
         return start;
+    }
+
+    public static void main(String[] args){
+        GetNumberOfK(new int[]{1,2,3,3,3,3,4,4,4,5,5,6},3);
     }
 
 }

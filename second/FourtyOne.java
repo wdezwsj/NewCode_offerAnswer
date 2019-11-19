@@ -34,7 +34,7 @@ public class FourtyOne {
                 right++;
                 x += right;
             } else {
-                //和小了，就右移左指针缩小窗口
+                //和大了，就右移左指针缩小窗口
                 x -= left;
                 left++;
             }

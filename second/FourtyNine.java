@@ -37,7 +37,7 @@ public class FourtyNine {
         for (int i = 0; i < list.size(); i++){
             result = result*10 + list.get(i);
         }
-        return flag?result:-result;
+        return flag? result: -result;
     }
 
 }

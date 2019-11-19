@@ -1,6 +1,6 @@
 package com.company.second;
 
-//丑数
+//丑数（第一个丑数为1，求第index个丑数）
 public class ThirtyThree {
 
     //思路：
@@ -9,7 +9,7 @@ public class ThirtyThree {
     //每一次寻找下一个丑数的过程就是比较三种倍数与被乘数的乘积中较小的那一个
     //然后将对应的倍数指针右移，往数组中加入丑数
     //重复上述步骤
-    //注意：可能会出现某个丑数是两种倍数的结合，故对应的倍数指针都要右移
+    //注意：可能会出现某个丑数是多种倍数的结合，故对应的倍数指针都要右移
     public int GetUglyNumber_Solution(int index) {
         if (index < 1){
             return 0;

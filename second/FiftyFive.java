@@ -24,8 +24,8 @@ public class FiftyFive {
         if (pHead == null || pHead.next == null){
             return null;
         }
-        ListNode p1 = pHead.next;
-        ListNode p2 = pHead.next.next;
+        ListNode p1 = pHead;
+        ListNode p2 = pHead;
         while (p1 != p2){
             p1 = p1.next;
             p2 = p2.next.next;

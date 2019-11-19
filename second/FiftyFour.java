@@ -13,9 +13,9 @@ public class FiftyFour {
     //字符流输入时，往map中add数据
     //查第一个不重复的数时，遍历map中的元素即可。
 
-    LinkedHashMap<Character,Integer> linkedHashMap = new LinkedHashMap<>();
+    static LinkedHashMap<Character,Integer> linkedHashMap = new LinkedHashMap<Character, Integer>(256,0.75f,true);
     //Insert one char from stringstream
-    public void Insert(char ch) {
+    public static void Insert(char ch) {
         if (linkedHashMap.containsKey(ch)){
             linkedHashMap.replace(ch,linkedHashMap.get(ch)+1);
         }else {
@@ -23,7 +23,7 @@ public class FiftyFour {
         }
     }
     //return the first appearence once char in current stringstream
-    public char FirstAppearingOnce() {
+    public static char FirstAppearingOnce() {
         Set<Map.Entry<Character, Integer>> set = linkedHashMap.entrySet();
         for (Map.Entry<Character, Integer> entry : set){
             if (entry.getValue() == 1){
@@ -31,6 +31,22 @@ public class FiftyFour {
             }
         }
         return '#';
+    }
+
+    public static void main(String[] args){
+        Insert('a');
+        Insert('b');
+        Insert('c');
+        Insert('a');
+        Insert('b');
+        Insert('d');
+        Insert('e');
+        Insert('c');
+        Insert('f');
+        Insert('d');
+        Insert('e');
+        System.out.println(FirstAppearingOnce());
+
     }
 
 }

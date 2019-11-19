@@ -54,6 +54,7 @@ public class Seventeen {
             return false;
         }
         //比较root1和root2的左子结构和右子结构时候相等
+        //短路与还能有助于在左子树已确定不是子结构的时候提前退出
         return isSubtree(root1.left,root2.left) && isSubtree(root1.right,root2.right);
     }
 

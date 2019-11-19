@@ -5,8 +5,8 @@ public class ThirtyEight {
 
     public static class TreeNode {
         int val = 0;
-        TreeNode left = null;
-        TreeNode right = null;
+        TreeNode left;
+        TreeNode right;
 
         public TreeNode(int val) {
             this.val = val;
@@ -14,6 +14,7 @@ public class ThirtyEight {
     }
 
     //思路：
+    //方法一
     //遇到树的路径相关的题，优先考虑前序遍历，前序遍历是天然的深度优先遍历
     //遇到叶节点，则用当前深度和最大值进行一次比较
     //注意，回退时记得将当前深度减一
@@ -36,7 +37,7 @@ public class ThirtyEight {
         return max;
     }
 
-    //思路：
+    //方法二
     //采用后序遍历更简单！
     //原理，父节点的深度等于左右子树中深度较大的值+1
     public int TreeDepth2(TreeNode root) {
